@@ -2,11 +2,11 @@
   globals.mapleader = " ";
 
   opts = {
-    # Show line numbers
+    # Line numbers
     number = true;
-    # Show relative line numbers
     relativenumber = true;
-    # Tab width should be 2
+
+    # Tabs
     shiftwidth = 2;
 
     # Search
@@ -16,7 +16,7 @@
     # Highlight the current line
     cursorline = true;
 
-    # better buffer splitting
+    # Better buffer splitting
     splitright = true;
     splitbelow = true;
 
