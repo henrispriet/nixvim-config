@@ -123,6 +123,26 @@
 
   keymaps = [
     {
+      options.desc = "Go to definition";
+      key = "<leader>cd";
+      action = "<cmd>Telescope lsp_definitions<cr>";
+    }
+    {
+      options.desc = "Go to type definition";
+      key = "<leader>ct";
+      action = "<cmd>Telescope lsp_type_definitions<cr>";
+    }
+    {
+      options.desc = "Lsp References";
+      key = "<leader>cr";
+      action = "<cmd>Telescope lsp_references<cr>";
+    }
+    {
+      options.desc = "Lsp Code Actions";
+      key = "<leader>ca";
+      action.__raw = "vim.lsp.buf.code_action";
+    }
+    {
       options.desc = "Open Diagnostics (Trouble)";
       key = "<leader>xx";
       action = "<cmd>Trouble cascade open<cr>";
