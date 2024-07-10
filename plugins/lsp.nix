@@ -134,13 +134,23 @@
     }
     {
       options.desc = "Lsp References";
-      key = "<leader>cr";
+      key = "<leader>cf";
       action = "<cmd>Telescope lsp_references<cr>";
+    }
+    {
+      options.desc = "Lsp rename";
+      key = "<leader>cr";
+      action.__raw = "vim.lsp.buf.rename";
     }
     {
       options.desc = "Lsp Code Actions";
       key = "<leader>ca";
       action.__raw = "vim.lsp.buf.code_action";
+    }
+    {
+      options.desc = "Line Diagnostic";
+      key = "<leader>xl";
+      action.__raw = "vim.diagnostic.open_float";
     }
     {
       options.desc = "Open Diagnostics (Trouble)";
