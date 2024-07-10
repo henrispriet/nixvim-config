@@ -3,8 +3,20 @@
   lib,
   ...
 }: {
-  # TODO: autocmd to highlight yanked region
   # https://www.reddit.com/r/neovim/comments/gofplz/comment/g5sgtjp/
+  autoGroups.highlight_yanked = {};
+  autoCmd = [
+    {
+      desc = "Highlight yanked region";
+      event = ["TextYankPost"];
+      group = "highlight_yanked";
+      callback.__raw = /* lua */ ''
+        function()
+          vim.highlight.on_yank({higroup="Visual", timeout=400})
+        end
+        '';
+    }
+  ];
 
   plugins = {
     flash = {
