@@ -26,7 +26,7 @@
     flash = {
       enable = true;
 
-      modes.search.enabled = true;
+      settings.modes.search.enabled = true;
     };
 
     indent-blankline.enable = true;
