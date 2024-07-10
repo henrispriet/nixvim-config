@@ -9,8 +9,6 @@
     ./lsp.nix
   ];
 
-  # TODO: fix conflicting keymaps
-
   # TODO: switch from base16 gruvbox to nixvim gruvbox
   colorschemes.base16 = {
     enable = true;

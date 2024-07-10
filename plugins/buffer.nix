@@ -1,7 +1,11 @@
 {...}: {
   plugins = {
     bufferline.enable = true;
-    lualine.enable = true;
+    lualine = {
+      enable = true;
+
+      globalstatus = true;
+    };
 
     # for delete buffer picker
     telescope.enable = true;
@@ -27,6 +31,7 @@
       options.desc = "Delete buffers";
       key = "<leader>d";
       # TODO: inline?
+      # TODO: replace with dressing.nvim?
       action.__raw = builtins.readFile ./telescope-pickers/delete_buffers.lua;
     }
   ];

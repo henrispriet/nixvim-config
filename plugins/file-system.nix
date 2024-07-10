@@ -62,6 +62,7 @@
       options.desc = "Find Files";
       key = "<leader><space>";
       # TODO: inline?
+      # TODO: proximity-sort?
       action.__raw = builtins.readFile ./telescope-pickers/find_files_and_dirs.lua;
     }
   ];
