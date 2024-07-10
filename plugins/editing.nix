@@ -10,10 +10,14 @@
       desc = "Highlight yanked region";
       event = ["TextYankPost"];
       group = "highlight_yanked";
-      callback.__raw = /* lua */ ''
-        function()
-          vim.highlight.on_yank({higroup="Visual", timeout=400})
-        end
+      callback.__raw =
+        /*
+        lua
+        */
+        ''
+          function()
+            vim.highlight.on_yank({higroup="Visual", timeout=400})
+          end
         '';
     }
   ];

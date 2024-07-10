@@ -1,7 +1,4 @@
-{
-  float-styling,
-  ...
-}: {
+{float-styling, ...}: {
   plugins = {
     gitsigns.enable = true;
 
