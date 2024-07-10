@@ -1,4 +1,8 @@
-{getColor, ...}: {
+{
+  float-styling,
+  getColor,
+  ...
+}: {
   diagnostics.virtual_text = false;
   highlightOverride = let
     underline = {
@@ -15,16 +19,36 @@
   # set diagnostic signs
   # https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/#severity_signs_in_nvim_lsp_diagnostics
   # https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/components/diagnostics/config.lua#L8-L12
-  extraConfigLua =
+  extraConfigLua = let
+    border = float-styling.border.name;
+  in
     /*
     lua
     */
     ''
+      -- set lsp signs
       local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = "󰋽 " }
       for type, icon in pairs(signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
+
+      -- add borders to lsp
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover, {
+          border = "${border}"
+        }
+      )
+
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+          border = "${border}"
+        }
+      )
+
+      vim.diagnostic.config{
+        float={border="${border}"}
+      }
     '';
 
   plugins.lsp = {
@@ -89,11 +113,7 @@
       # HACK: folke does not seem to like people disabling his keybinds i guess, jeez
       keys = let
         disable = {
-          action.__raw =
-            /*
-            lua
-            */
-            ''function() end'';
+          action.__raw = ''function() end'';
           desc = "-";
         };
       in {
