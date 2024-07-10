@@ -7,6 +7,7 @@
     ./terminal.nix
     ./telescope.nix
     ./lsp.nix
+    ./dressing.nix
   ];
 
   # TODO: switch from base16 gruvbox to nixvim gruvbox
