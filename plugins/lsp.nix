@@ -169,6 +169,11 @@
       action.__raw = "vim.lsp.buf.code_action";
     }
     {
+      options.desc = "Format File";
+      key = "<C-s>";
+      action.__raw = "vim.lsp.buf.format";
+    }
+    {
       options.desc = "Line Diagnostic";
       key = "<leader>xl";
       action.__raw = "vim.diagnostic.open_float";
