@@ -74,6 +74,7 @@
     };
   };
 
+  plugins.fidget.enable = true;
   plugins.treesitter.enable = true;
   plugins.trouble = {
     enable = true;
