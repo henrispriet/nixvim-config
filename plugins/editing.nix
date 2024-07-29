@@ -16,7 +16,7 @@
         */
         ''
           function()
-            vim.highlight.on_yank({higroup="Visual", timeout=400})
+            vim.highlight.on_yank({higroup="Visual", timeout=300})
           end
         '';
     }
