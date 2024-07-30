@@ -71,7 +71,19 @@
         };
       };
     };
+
+    hop = {
+      enable = true;
+    };
   };
+
+  keymaps = [
+    {
+      options.desc = "Hop word";
+      key = "gh";
+      action = "<cmd>HopWordMW<cr>";
+    }
+  ];
 
   # nvim inverts the highlight bg and fg of the character under the cursor
   # so give Flash hightlights (`FlashMatch`) a "bright" fg
