@@ -2,6 +2,7 @@
 function(opts)
   local actions = require("telescope.actions")
   local action_state = require("telescope.actions.state")
+  local sorters = require("telescope.sorters")
   local conf = require("telescope.config").values
   local finders = require("telescope.finders")
   local pickers = require("telescope.pickers")
@@ -66,7 +67,7 @@ function(opts)
   pickers.new(opts, {
     prompt_title = "Close Buffers",
     finder = finder,
-    sorter = conf.generic_sorter(opts),
+    sorter = sorters.empty(opts),
     previewer = conf.grep_previewer(opts),
     attach_mappings = attach_mappings,
   }):find()
