@@ -19,9 +19,5 @@
   plugins = {
     # TODO: add prefix names (e.g. <leader>g => "+git")
     which-key.enable = true;
-
-    # lang support
-    # TODO: does this do anything anymore, now that i have lsp?
-    nix.enable = true;
   };
 }

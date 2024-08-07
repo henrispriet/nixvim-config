@@ -66,8 +66,7 @@
 
     servers = {
       lua-ls.enable = true;
-      nil-ls.enable = true;
-      # nixd.enable = true;
+      nixd.enable = true;
 
       html.enable = true;
       tsserver.enable = true;
