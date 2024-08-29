@@ -6,6 +6,7 @@
   imports = [
     ./servers.nix
     ./trouble.nix
+    ./otter.nix
   ];
 
   diagnostics.virtual_text = false;
@@ -58,8 +59,6 @@
 
   plugins.fidget.enable = true;
   plugins.treesitter.enable = true;
-
-  };
 
   keymaps = [
     {
