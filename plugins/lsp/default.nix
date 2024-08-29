@@ -7,6 +7,7 @@
     ./servers.nix
     ./trouble.nix
     ./otter.nix
+    ./coq.nix
   ];
 
   diagnostics.virtual_text = false;
