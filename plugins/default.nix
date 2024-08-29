@@ -6,7 +6,7 @@
     ./editing.nix
     ./terminal.nix
     ./telescope.nix
-    ./lsp.nix
+    ./lsp
     ./dressing.nix
   ];
 
