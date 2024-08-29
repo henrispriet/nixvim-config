@@ -70,6 +70,8 @@
 
       html.enable = true;
       tsserver.enable = true;
+
+      bashls.enable = true;
     };
   };
 
