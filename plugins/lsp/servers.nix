@@ -18,6 +18,7 @@
 
       html.enable = true;
       tsserver.enable = true;
+      sqls.enable = true;
 
       bashls.enable = true;
       marksman.enable = true;
