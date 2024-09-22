@@ -2,6 +2,12 @@
   plugins.mkdnflow = {
     enable = true;
 
+    # fix conflicting keymap '-' with oil.nvim
+    mappings.MkdnDecreaseHeading = {
+      key = "=";
+      modes = "n";
+    };
+
     perspective = {
       priority = "root";
       rootTell = "index.md";
