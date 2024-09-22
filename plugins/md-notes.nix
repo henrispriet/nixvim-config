@@ -24,10 +24,12 @@
   plugins.markview = {
     enable = true;
 
-    settings = {
-      mode = ["n" "i" "no" "c"];
-      hybrid_modes = ["i"];
-    };
+    # FIXME: how tf does this work?????
+    # I just want hybrid mode for everything, please for the love of god
+    # settings = {
+    #   mode = ["i" "n" "c" "no"];
+    #   hybrid_modes = ["i" "n"];
+    # };
   };
 
   keymaps = [
