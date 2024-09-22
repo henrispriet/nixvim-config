@@ -12,6 +12,13 @@
       priority = "root";
       rootTell = "index.md";
     };
+
+    modules = {
+      lists = false;
+      folds = false;
+      tables = false;
+      bib = false;
+    };
   };
 
   plugins.markview = {
