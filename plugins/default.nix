@@ -8,6 +8,7 @@
     ./telescope.nix
     ./lsp
     ./dressing.nix
+    ./md-notes.nix
   ];
 
   # TODO: switch from base16 gruvbox to nixvim gruvbox
