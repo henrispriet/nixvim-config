@@ -12,55 +12,51 @@
       focus = true;
 
       modes.cascade = {
-	mode = "diagnostics"; # inherit from diagnostics mode
-	# NOTE: why does this get formatted so strangely? ;-;
-	filter.__raw =
-	  /*
-	  lua
-	  */
-	  ''
-	    function(items)
-	      local severity = vim.diagnostic.severity.HINT
-	      for _, item in ipairs(items) do
-		severity = math.min(severity, item.severity)
-	      end
-	      return vim.tbl_filter(
-		function(item)
-		  return item.severity == severity
-		end,
-		items
-	      )
-	    end
-	  '';
+        mode = "diagnostics"; # inherit from diagnostics mode
+        # NOTE: why does this get formatted so strangely? ;-;
+        filter.__raw = /* lua */ ''
+          function(items)
+            local severity = vim.diagnostic.severity.HINT
+            for _, item in ipairs(items) do
+              severity = math.min(severity, item.severity)
+            end
+            return vim.tbl_filter(
+              function(item)
+                return item.severity == severity
+              end,
+              items
+            )
+          end
+        '';
       };
 
       # HACK: folke does not seem to like people disabling his keybinds i guess, jeez
       keys = let
-	disable = {
-	  action.__raw = ''function() end'';
-	  desc = "-";
-	};
+        disable = {
+          action.__raw = ''function() end'';
+          desc = "-";
+        };
       in {
-	"?" = "help";
-	"r" = "refresh";
-	"q" = "close";
-	"<esc>" = "cancel";
-	"<cr>" = "jump";
-	"j" = "next";
-	"k" = "prev";
-	"gg" = "first";
-	"G" = "last";
-	"<c-s>" = "jump_split";
-	"<c-v>" = "jump_vsplit";
-	"o" = disable;
-	"<2-leftmouse>" = disable;
-	"dd" = disable;
-	"d" = disable;
-	"i" = disable;
-	"p" = disable;
-	"P" = disable;
-	"gb" = disable;
-	"s" = disable;
+        "?" = "help";
+        "r" = "refresh";
+        "q" = "close";
+        "<esc>" = "cancel";
+        "<cr>" = "jump";
+        "j" = "next";
+        "k" = "prev";
+        "gg" = "first";
+        "G" = "last";
+        "<c-s>" = "jump_split";
+        "<c-v>" = "jump_vsplit";
+        "o" = disable;
+        "<2-leftmouse>" = disable;
+        "dd" = disable;
+        "d" = disable;
+        "i" = disable;
+        "p" = disable;
+        "P" = disable;
+        "gb" = disable;
+        "s" = disable;
       };
     };
   };
