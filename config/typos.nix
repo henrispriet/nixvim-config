@@ -5,6 +5,7 @@
     {
       key = "q:";
       action = "<cmd>q<cr>";
+      mode = ["n" "c"];
     }
     {
       key = "<f1>";
