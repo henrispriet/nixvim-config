@@ -17,7 +17,8 @@
       nixd.enable = true;
 
       html.enable = true;
-      tsserver.enable = true;
+      ts-ls.enable = true;
+      # needs configing with db connection
       # sqls.enable = true;
 
       bashls.enable = true;

@@ -4,7 +4,7 @@
     lualine = {
       enable = true;
 
-      globalstatus = true;
+      settings.options.globalstatus = true;
     };
 
     # for delete buffer picker

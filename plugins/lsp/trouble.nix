@@ -61,6 +61,7 @@
     };
   };
 
+  # TODO: use keymapsOnEvent
   keymaps = [
     {
       options.desc = "Open Diagnostics (cascade)";

@@ -19,5 +19,7 @@
   plugins = {
     # TODO: add prefix names (e.g. <leader>g => "+git")
     which-key.enable = true;
+
+    web-devicons.enable = true;
   };
 }
