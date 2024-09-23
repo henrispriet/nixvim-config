@@ -45,17 +45,26 @@
               filename = fp:read("*all")
               fp:close()
             end
-            filename = filename..".png"
+
+            -- echo -n because date appends a newline >:(
+            local fp = io.popen("echo -n $(date '+%Y-%m-%d')")
+            date = fp:read("*all")
+            fp:close()
+
+            filename = (date.."_"..filename..".png")
 
             -- write link to file to buffer
-            vim.cmd("r!echo \\!["..filename.."]")
+            local command = "r!echo \\!["..filename.."]"
+            vim.cmd(command)
+
+            local filename_escaped = filename:gsub("'", "\\'")
 
             -- create blank file
             -- https://superuser.com/a/294948
-            os.execute("${pkgs.imagemagick}/bin/magick -size 1000x600 xc:white "..filename)
+            os.execute("${pkgs.imagemagick}/bin/magick -size 1000x600 xc:white '"..filename_escaped.."'")
 
             -- open drawing
-            os.execute("${pkgs.drawing}/bin/drawing --new-tab "..filename.." &")
+            os.execute("${pkgs.drawing}/bin/drawing --new-tab '"..filename_escaped.."' &")
           end)
         end
       '';
