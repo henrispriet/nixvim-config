@@ -21,18 +21,15 @@
     };
   };
 
-  plugins.markview = {
-    enable = true;
-
-    # FIXME: how tf does this work?????
-    # I just want hybrid mode for everything, please for the love of god
-    # settings = {
-    #   mode = ["i" "n" "c" "no"];
-    #   hybrid_modes = ["i" "n"];
-    # };
-  };
+  # TODO: find better way to preview markdown
+  plugins.markdown-preview.enable = true;
 
   keymaps = [
+    {
+      options.desc = "Toggle Markdown Preview";
+      key = "<leader>mp";
+      action = "<cmd>MarkdownPreviewToggle<cr>";
+    }
     {
       options.desc = "Quick insert image";
       key = "<leader>md";
