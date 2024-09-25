@@ -57,7 +57,7 @@
             local command = "r!echo \\!["..filename.."]"
             vim.cmd(command)
 
-            local filename_escaped = filename:gsub("'", "\\'")
+            local filename_escaped = filename:gsub(" ", "-"):gsub("'", "\\'")
 
             -- create blank file
             -- https://superuser.com/a/294948
