@@ -48,7 +48,7 @@
 
             -- echo -n because date appends a newline >:(
             local fp = io.popen("echo -n $(date '+%Y-%m-%d')")
-            date = fp:read("*all")
+            local date = fp:read("*all")
             fp:close()
 
             filename = (date.."_"..filename..".png")
