@@ -21,8 +21,7 @@
     };
   };
 
-  # TODO: find better way to preview markdown
-  plugins.markdown-preview.enable = true;
+  plugins.render-markdown.enable = true;
 
   keymaps = [
     {
