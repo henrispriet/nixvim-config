@@ -1,8 +1,10 @@
 {...}: {
-  plugins.coq-nvim.enable = true;
-  plugins.coq-nvim.installArtifacts = true;
+  plugins.coq-nvim = {
+    enable = true;
+    installArtifacts = true;
 
-  # might turn this off
-  plugins.coq-nvim.settings.completion.always = true;
-  plugins.coq-nvim.settings.auto_start = "shut-up";
+    settings.auto_start = "shut-up";
+    # might turn this off
+    settings.completion.always = true;
+  };
 }
