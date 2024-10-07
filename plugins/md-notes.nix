@@ -50,13 +50,13 @@
             local date = fp:read("*all")
             fp:close()
 
-            filename = (date.."_"..filename..".png")
+            filename = (date.."_"..filename:gsub(" ", "-")..".png")
 
             -- write link to file to buffer
             local command = "r!echo \\!["..filename.."]"
             vim.cmd(command)
 
-            local filename_escaped = filename:gsub(" ", "-"):gsub("'", "\\'")
+            local filename_escaped = filename:gsub("'", "\\'")
 
             -- create blank file
             -- https://superuser.com/a/294948
