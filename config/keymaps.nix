@@ -5,7 +5,8 @@
     # Disable search highlight
     {
       options.desc = "Disable search highlight";
-      key = "?";
+      mode = ["n"];
+      key = "<esc>";
       action = "<cmd>noh<cr>";
     }
 
