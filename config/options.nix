@@ -7,7 +7,7 @@
     relativenumber = true;
 
     # Tabs
-    # FIXME: 8 spaces (4 "tabs") automatically converted to \t
+    tabstop = 2;
     shiftwidth = 2;
 
     # Search
