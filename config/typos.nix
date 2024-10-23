@@ -16,9 +16,14 @@
   userCommands = let
     inherit (lib) genAttrs toUpper toLower;
 
-    # FIXME: command must start with uppercase
     alternateCase = cmd: lib.mapCartesianProduct
-      ({ w ? "", q ? "", a ? "" }: w + q + a)
+      ({ w ? "", q ? "", a ? "" }:
+        # HACK: ensure that first letter is upper (stupid nvim requirement)
+        if w != "" then
+          (toUpper w) + q + a
+        else
+          toUpper q + a
+      )
       (genAttrs
         (lib.stringToCharacters cmd)
         (c: [ (toLower c) (toUpper c) ])
@@ -29,9 +34,12 @@
       bang = true;
     };
   in
-    genAttrs (lib.concatMap
-        alternateCase
-        [ "w" "q" "wq" "wa" "qa" "wqa" ]
+    genAttrs
+      (lib.unique
+        (lib.concatMap
+          alternateCase
+          [ "w" "q" "wq" "wa" "qa" "wqa" ]
+        )
       )
       mkLowerAlias;
 }
