@@ -14,21 +14,19 @@
     }
   ];
 
-  userCommands = let
-    inherit (lib) genAttrs toUpper toLower;
+  userCommands = with lib; let
+    slideSplit = str: genList
+      (i: {
+        left = (substring 0 (i + 1) str);
+        right = (substring (i + 1) (stringLength str) str);
+      })
+      (stringLength str);
 
-    alternateCase = cmd: lib.mapCartesianProduct
-      ({ w ? "", q ? "", a ? "" }:
-        # HACK: ensure that first letter is upper (stupid nvim requirement)
-        if w != "" then
-          (toUpper w) + q + a
-        else
-          toUpper q + a
-      )
-      (genAttrs
-        (lib.stringToCharacters cmd)
-        (c: [ (toLower c) (toUpper c) ])
-      );
+    # generate all combinations that begin with upper case letters
+    # e.g. "wq" -> [ "Wq" "WQ" ]
+    beginUpperCombinations = word: map
+      ({ left, right }: (toUpper left) + (toLower right))
+      (slideSplit word);
 
     mkLowerAlias = cmd: {
       command = toLower cmd;
@@ -36,11 +34,9 @@
     };
   in
     genAttrs
-      (lib.unique
-        (lib.concatMap
-          alternateCase
-          [ "w" "q" "wq" "wa" "qa" "wqa" ]
-        )
+      (concatMap
+        beginUpperCombinations
+        [ "w" "q" "wq" "wa" "qa" "wqa" "bd" "bn" "bp" ]
       )
       mkLowerAlias;
 }
