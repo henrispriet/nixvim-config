@@ -4,7 +4,7 @@
 
     inlayHints = false;
 
-    servers.rust-analyzer = {
+    servers.rust_analyzer = {
       enable = true;
 
       # let rustc and cargo versions be managed by the project
@@ -13,11 +13,11 @@
     };
 
     servers = {
-      lua-ls.enable = true;
+      lua_ls.enable = true;
       nixd.enable = true;
 
       html.enable = true;
-      ts-ls.enable = true;
+      ts_ls.enable = true;
       # needs configing with db connection
       # sqls.enable = true;
 
