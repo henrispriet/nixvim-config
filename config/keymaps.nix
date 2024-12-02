@@ -7,7 +7,7 @@
       options.desc = "Disable search highlight";
       mode = ["n"];
       key = "<esc>";
-      action = "<cmd>noh<cr>";
+      action = "<cmd>noh<cr><esc>";
     }
 
     # Shortcut to yank register
