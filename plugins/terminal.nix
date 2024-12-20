@@ -45,8 +45,8 @@
           # red
           color="\e[31m"
         fi
-        echo -en $color"exited with code $EXIT - press ENTER to continue\e[0m"
-        read -s
+        echo -en "$color""exited with code $EXIT - press ENTER to continue\e[0m"
+        read -rs
       '';
     in
       /*
