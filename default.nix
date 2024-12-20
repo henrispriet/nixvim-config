@@ -16,6 +16,17 @@
     }
   ];
 
+	# "IDE functionality" (i.e. code navigation)
+	# NOTE: modularity!!! -> avoid language specific stuff ig?
+	# TODO: install lsps for more languages: python, c, c++
+	# TODO: file search: proximity-sort + key to toggle between file and dir mode + key to toggle hidden
+	# TODO: setup DAP (core + virtual text)
+	# TODO: allow binding shell commands to keys somehow (using `Do` or Toggleterm sendkeys) + perhaps also keybindings for `ToggleTermSend...`
+	# TODO: keybind for `Telescope tags`? + how to make tags for languages other than c
+	# TODO: parse command output to allow jumping to error lines (https://www.youtube.com/watch?v=WFLvcMiG38w?t=665) or better trouble.nvim integration????
+	# TODO: keybinds to move/manage windows (switch between vsplit, hsplit, float + adjust window size)
+	# TODO: nvim-remote maybe
+
   vimAlias = true;
   viAlias = true;
 }
