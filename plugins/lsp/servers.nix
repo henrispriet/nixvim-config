@@ -30,6 +30,9 @@
       bashls.enable = true;
 			# markdown
       marksman.enable = true;
+
+			# C/C++
+			ccls.enable = true;
     };
   };
 }
