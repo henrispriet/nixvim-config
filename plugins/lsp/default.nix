@@ -60,6 +60,7 @@
 
   plugins.fidget.enable = true;
   plugins.treesitter.enable = true;
+  plugins.treesitter-context.enable = true;
 
   keymaps = [
     {
